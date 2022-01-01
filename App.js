@@ -1,12 +1,14 @@
 import React from 'react';
 import {} from 'react-native';
+import {Provider} from 'react-redux';
 import HomeScreen from './src/screens/HomeScreen';
+import store from './src/redux/store';
 
 const App = () => {
   return (
-    <>
+    <Provider store={store}>
       <HomeScreen />
-    </>
+    </Provider>
   );
 };
 
