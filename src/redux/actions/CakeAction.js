@@ -5,3 +5,9 @@ export const buyCakeAction = () => {
     type: BUY_CAKE,
   };
 };
+
+export const addCakeAction = () => {
+  return {
+    type: ADD_CAKE,
+  };
+};

@@ -11,6 +11,11 @@ const CakeReducer = (state = initialState, action) => {
         ...state,
         numberOfCake: state.numberOfCake - 1,
       };
+    case ADD_CAKE:
+      return {
+        ...state,
+        numberOfCake: state.numberOfCake + 1,
+      };
     default:
       return state;
   }
