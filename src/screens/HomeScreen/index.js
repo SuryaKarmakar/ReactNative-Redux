@@ -1,12 +1,14 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import Styles from './styles';
-import ProductScreen from '../ProductScreen';
+import CakeProductScreen from '../CakeProductScreen';
+import IceCreamProductScreen from '../IceCreamProductScreen';
 
 const HomeScreen = () => {
   return (
     <View style={Styles.container}>
-      <ProductScreen />
+      <CakeProductScreen />
+      <IceCreamProductScreen />
     </View>
   );
 };
