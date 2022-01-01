@@ -1,24 +1,29 @@
 import React from 'react';
 import {View, Text, Button} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
-import {buyCakeAction, addCakeAction} from '../../redux/actions/CakeAction';
+import {
+  buyIceCreamAction,
+  addIceCreamAction,
+} from '../../redux/actions/IceCreamAction';
 
 import Styles from './styles';
 
 const IceCreamProductScreen = () => {
-  const numberOfCake = useSelector(state => state?.numberOfCake);
+  const numberOfIceCream = useSelector(
+    state => state?.IceCreamReducer?.numberOfIceCream,
+  );
   const dispatch = useDispatch();
   return (
     <View style={Styles.container}>
-      <Text style={Styles.textStyle}>Total IceCream : {numberOfCake}</Text>
+      <Text style={Styles.textStyle}>Total IceCream : {numberOfIceCream}</Text>
       <View style={Styles.flexRowView}>
         <Button
           title="Add IceCream"
-          onPress={() => dispatch(addCakeAction())}
+          onPress={() => dispatch(addIceCreamAction())}
         />
         <Button
           title="Buy IceCream"
-          onPress={() => dispatch(buyCakeAction())}
+          onPress={() => dispatch(buyIceCreamAction())}
         />
       </View>
     </View>
