@@ -7,3 +7,5 @@ const Styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
+
+export default Styles;
