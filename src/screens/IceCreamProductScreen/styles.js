@@ -8,7 +8,7 @@ const Styles = StyleSheet.create({
   },
   flexRowView: {
     flexDirection: 'row',
-    width: 200,
+    width: 300,
     justifyContent: 'space-between',
   },
   textStyle: {

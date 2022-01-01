@@ -7,12 +7,19 @@ import Styles from './styles';
 
 const IceCreamProductScreen = () => {
   const numberOfCake = useSelector(state => state?.numberOfCake);
+  const dispatch = useDispatch();
   return (
     <View style={Styles.container}>
       <Text style={Styles.textStyle}>Total IceCream : {numberOfCake}</Text>
       <View style={Styles.flexRowView}>
-        {/* <Button title="Add Cake" onPress={props.addCakeAction} />
-        <Button title="Buy Cake" onPress={props.buyCakeAction} /> */}
+        <Button
+          title="Add IceCream"
+          onPress={() => dispatch(addCakeAction())}
+        />
+        <Button
+          title="Buy IceCream"
+          onPress={() => dispatch(buyCakeAction())}
+        />
       </View>
     </View>
   );
