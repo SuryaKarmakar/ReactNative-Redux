@@ -1,16 +1,31 @@
 import React from 'react';
 import {View, Text, Button} from 'react-native';
+import {connect} from 'react-redux';
+import {buyCakeAction} from '../../redux/actions/CakeAction';
+
 import Styles from './styles';
 
-const ProductScreen = () => {
+const ProductScreen = props => {
   return (
     <View style={Styles.container}>
-      <Text style={Styles.textStyle}>ProductScreen</Text>
+      <Text style={Styles.textStyle}>Total Cake : {props.numberOfCake}</Text>
       <View style={Styles.flexRowView}>
         <Button title="Add Cake" />
-        <Button title="Buy Cake" />
+        <Button title="Buy Cake" onPress={props.buyCakeAction} />
       </View>
     </View>
   );
 };
-export default ProductScreen;
+
+const mapStateToProps = state => {
+  return {
+    numberOfCake: state?.numberOfCake,
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    buyCakeAction: () => dispatch(buyCakeAction()),
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(ProductScreen);
