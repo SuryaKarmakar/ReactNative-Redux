@@ -13,6 +13,7 @@ const IceCreamProductScreen = () => {
     state => state?.IceCreamReducer?.numberOfIceCream,
   );
   const dispatch = useDispatch();
+
   return (
     <View style={Styles.container}>
       <Text style={Styles.textStyle}>Total IceCream : {numberOfIceCream}</Text>

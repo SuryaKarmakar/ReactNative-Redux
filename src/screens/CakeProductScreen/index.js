@@ -6,12 +6,14 @@ import {buyCakeAction, addCakeAction} from '../../redux/actions/CakeAction';
 import Styles from './styles';
 
 const CakeProductScreen = props => {
+  const {numberOfCake, addCakeAction, buyCakeAction} = props;
+
   return (
     <View style={Styles.container}>
-      <Text style={Styles.textStyle}>Total Cake : {props.numberOfCake}</Text>
+      <Text style={Styles.textStyle}>Total Cake : {numberOfCake}</Text>
       <View style={Styles.flexRowView}>
-        <Button title="Add Cake" onPress={props.addCakeAction} />
-        <Button title="Buy Cake" onPress={props.buyCakeAction} />
+        <Button title="Add Cake" onPress={addCakeAction} />
+        <Button title="Buy Cake" onPress={buyCakeAction} />
       </View>
     </View>
   );
